@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "tag": "admissions",
+      "patterns": [
+        "How do I apply for admission",
+        "Admission deadlines",
+        "what are the entry requirements"
+      ],
+      "responses": [
+        "Admissions info is at https://college.example.edu/admissions. Deadlines: Fall - Aug 15, Spring - Jan 10. Need more details?"
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "How much is the tuition",
+        "fee structure",
+        "payment options for fees"
+      ],
+      "responses": [
+        "Tuition depends on your program. For undergrad it's approx ₹X per year. Check finance office or this page: /fees"
+      ]
+    },
+    {
+      "tag": "timetable",
+      "patterns": [
+        "When is my timetable released",
+        "class schedule",
+        "how to see timetable"
+      ],
+      "responses": [
+        "Timetables are released on the student portal 2 weeks before semester. Login to portal -> Timetable."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "Sorry, I didn't get that. Can you rephrase? Or type 'help' to see categories I can answer."
+      ]
+    }
+  ]
+}

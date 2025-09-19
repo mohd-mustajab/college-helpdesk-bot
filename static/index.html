@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>College Helpdesk</title></head>
+<body>
+  <div>
+    <h2>College Helpdesk Chat</h2>
+    <div id="chatbox"></div>
+    <input id="msg" placeholder="Ask about admissions, fees..." />
+    <button onclick="send()">Send</button>
+  </div>
+<script>
+async function send(){
+  const m = document.getElementById('msg').value;
+  const res = await fetch('/chat', {
+    method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({message:m})
+  });
+  const j = await res.json();
+  const cb = document.getElementById('chatbox');
+  cb.innerHTML += `<div><b>You:</b> ${m}</div><div><b>Bot:</b> ${j.reply}</div>`;
+  document.getElementById('msg').value='';
+}
+</script>
+</body>
+</html>
