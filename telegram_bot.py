@@ -1,44 +1,26 @@
-import logging
+import os
 import requests
-from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import Updater, MessageHandler, Filters
 
-# Replace with your BotFather token
-BOT_TOKEN = "7577946025:AAET6F8SOoeTPeEAxZzMZRfuZO--PK6XQPU"
-API_URL ="https://college-helpdesk-bot.onrender.com/chat"
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+API_URL = os.getenv("API_URL", "http://localhost:5000/chat")
 
-# Enable logging
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
-)
-
-# Start command
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hi! I'm your College Helpdesk Bot. Ask me anything.")
-
-# Handle messages
-async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_msg = update.message.text
+def handle_message(update, context):
+    user_message = update.message.text
     try:
-        resp = requests.post(API_URL, json={"message": user_msg}, timeout=10)
-        if resp.status_code == 200:
-            data = resp.json()
-            await update.message.reply_text(data.get("response", "No reply"))
-        else:
-            await update.message.reply_text(f"Server error: {resp.status_code}")
-            print("Error from API:", resp.text)
+        res = requests.post(API_URL, json={"message": user_message})
+        data = res.json()
+        reply = data.get("reply", "Sorry, I’m having trouble right now.")
     except Exception as e:
-        await update.message.reply_text("⚠️ Error: API not reachable.")
-        print("Exception:", e)
+        reply = f"Server error: {e}"
+    update.message.reply_text(reply)
 
 def main():
-    app = Application.builder().token(BOT_TOKEN).build()
-
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-
-    print("🤖 Bot is running...")
-    app.run_polling()
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_message))
+    updater.start_polling()
+    updater.idle()
 
 if __name__ == "__main__":
     main()
