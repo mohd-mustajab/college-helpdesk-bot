@@ -4,7 +4,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 # Replace with your latest LocalTunnel URL
-API_URL = "https://twelve-pants-greet.loca.lt/chat"
+API_URL = "https://college-helpdesk-bot.onrender.com/chat"
 BOT_TOKEN = "7577946025:AAET6F8SOoeTPeEAxZzMZRfuZO--PK6XQPU"
 
 logging.basicConfig(level=logging.INFO)
