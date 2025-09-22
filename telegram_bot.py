@@ -1,27 +1,28 @@
 import logging
 import requests
 import os
-from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters
 
-# Load environment variables
-load_dotenv()
+# Read environment variables (set in Render dashboard)
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_URL = os.getenv("API_URL")
 
-BOT_TOKEN = os.geten("7577946025:AAET6F8SOoeTPeEAxZzMZRfuZO--PK6XQPU")
-API_URL = os.getenv("https://college-helpdesk-bot.onrender.com/chat")
+if not BOT_TOKEN or not API_URL:
+    raise ValueError("❌ BOT_TOKEN or API_URL is missing. Set them in Render Dashboard > Environment.")
 
 # Enable logging
 logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO
 )
 logger = logging.getLogger(__name__)
 
-# Start command
+# /start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hi! I'm your College Helpdesk Bot 🤖. Ask me anything!")
 
-# Handle user messages
+# Handle normal text messages
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
 
@@ -31,7 +32,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             data = response.json()
             reply_text = data.get("reply", "Sorry, something went wrong.")
         else:
-            reply_text = f"⚠️ Server error: {response.status_code}"
+            reply_text = f"⚠️ Server error {response.status_code}"
     except Exception as e:
         logger.error(f"Error contacting API: {e}")
         reply_text = "❌ Unable to reach the server."
@@ -39,16 +40,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(reply_text)
 
 def main():
-    if not BOT_TOKEN or not API_URL:
-        raise ValueError("❌ BOT_TOKEN or API_URL not found in .env file")
-
     app = Application.builder().token(BOT_TOKEN).build()
 
     # Handlers
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    # Run bot
+    # Start bot
     app.run_polling()
 
 if __name__ == "__main__":
