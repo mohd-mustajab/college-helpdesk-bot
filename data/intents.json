@@ -3,11 +3,20 @@
     {
       "tag": "admissions",
       "patterns": [
-        "How do I apply for admission",
-        "Admission deadlines",
+        "how do I apply for admission",
+        "admission deadlines",
         "what are the entry requirements",
         "application process",
-        "eligibility criteria for admission"
+        "eligibility criteria for admission",
+        "admissions info",
+        "apply for college",
+        "how to get admission",
+        "admission forms",
+        "requirements for applying",
+        "college application",
+        "admission procedure",
+        "admission process",
+        "admission help"
       ],
       "responses": [
         "Admissions info is at https://college.example.edu/admissions. Deadlines: Fall - Aug 15, Spring - Jan 10. Need more details?"
@@ -16,11 +25,20 @@
     {
       "tag": "fees",
       "patterns": [
-        "How much is the tuition",
+        "how much is the tuition",
         "fee structure",
         "payment options for fees",
         "tuition fees",
-        "scholarships for fees"
+        "scholarships for fees",
+        "college fees",
+        "fee details",
+        "fees per semester",
+        "fees for undergrad",
+        "cost of education",
+        "tuition cost",
+        "financial aid",
+        "payment schedule",
+        "how to pay fees"
       ],
       "responses": [
         "Tuition depends on your program. For undergrad it's approx ₹100,000 per year. Check finance office or this page: /fees"
@@ -29,11 +47,20 @@
     {
       "tag": "timetable",
       "patterns": [
-        "When is my timetable released",
+        "when is my timetable released",
         "class schedule",
         "how to see timetable",
         "lecture timings",
-        "semester schedule"
+        "semester schedule",
+        "exam schedule",
+        "class timings",
+        "schedule of classes",
+        "timetable for semester",
+        "time table",
+        "my classes",
+        "upcoming classes",
+        "course schedule",
+        "class plan"
       ],
       "responses": [
         "Timetables are released on the student portal 2 weeks before semester. Login to portal -> Timetable."
@@ -42,11 +69,21 @@
     {
       "tag": "library",
       "patterns": [
-        "Library timings",
-        "How to access online library",
-        "Book borrowing rules",
+        "library timings",
+        "how to access online library",
+        "book borrowing rules",
         "library catalog",
-        "library resources"
+        "library resources",
+        "library hours",
+        "library opening times",
+        "library info",
+        "library access",
+        "borrow books",
+        "library help",
+        "books available",
+        "library search",
+        "online library",
+        "library services"
       ],
       "responses": [
         "Library is open Mon-Sat 8 AM to 8 PM. Online resources: https://college.example.edu/library. You can borrow up to 5 books at a time."
@@ -55,13 +92,21 @@
     {
       "tag": "exams",
       "patterns": [
-        "Exam schedule",
-        "When are the final exams",
+        "exam schedule",
+        "when are the final exams",
         "exam rules",
         "exam timetable",
         "how to apply for exams",
         "grading system",
-        "exam results"
+        "exam results",
+        "upcoming exams",
+        "exam dates",
+        "exam registration",
+        "final exams",
+        "semester exams",
+        "exam information",
+        "exam instructions",
+        "exam portal"
       ],
       "responses": [
         "Exam schedules are posted on the student portal. Make sure you register for exams before the deadlines."
@@ -70,13 +115,21 @@
     {
       "tag": "hostel",
       "patterns": [
-        "Hostel rooms availability",
-        "How to apply for hostel",
+        "hostel rooms availability",
+        "how to apply for hostel",
         "hostel rules",
         "mess timings",
         "hostel facilities",
         "room rent",
-        "hostel contact"
+        "hostel contact",
+        "hostel info",
+        "hostel application",
+        "hostel booking",
+        "hostel timings",
+        "student hostel",
+        "hostel support",
+        "accommodation",
+        "hostel requirements"
       ],
       "responses": [
         "Hostel applications are open till Aug 1. Rooms assigned on first-come-first-serve basis. Check portal -> Hostel for details."
@@ -85,12 +138,21 @@
     {
       "tag": "transport",
       "patterns": [
-        "College bus timings",
-        "Shuttle service",
-        "Transport facilities",
-        "How to reach campus",
+        "college bus timings",
+        "shuttle service",
+        "transport facilities",
+        "how to reach campus",
         "bus routes",
-        "parking facilities"
+        "parking facilities",
+        "bus timings",
+        "campus transport",
+        "transport info",
+        "college shuttle",
+        "bus schedule",
+        "transport help",
+        "campus buses",
+        "travel to college",
+        "bus stops"
       ],
       "responses": [
         "College buses run from 7 AM to 10 PM. Routes and timings: https://college.example.edu/transport."
@@ -99,169 +161,44 @@
     {
       "tag": "scholarships",
       "patterns": [
-        "Scholarship eligibility",
-        "How to apply for scholarships",
-        "Financial aid",
-        "Merit scholarships",
-        "Need-based scholarships"
+        "scholarship eligibility",
+        "how to apply for scholarships",
+        "financial aid",
+        "merit scholarships",
+        "need-based scholarships",
+        "scholarship info",
+        "college scholarships",
+        "grant information",
+        "apply for scholarship",
+        "scholarship application",
+        "scholarship help",
+        "financial support",
+        "funding opportunities",
+        "aid for students",
+        "scholarship portal"
       ],
       "responses": [
         "Scholarships info and application: https://college.example.edu/scholarships. Check deadlines carefully!"
       ]
     },
     {
-      "tag": "it_support",
-      "patterns": [
-        "Can't login to portal",
-        "Forgot my password",
-        "WiFi issues",
-        "Software installation",
-        "IT helpdesk",
-        "Email setup",
-        "VPN connection"
-      ],
-      "responses": [
-        "For IT issues, contact support@college.example.edu or call +91-123-456-7890. Portal login help: https://college.example.edu/it-support"
-      ]
-    },
-    {
-      "tag": "events",
-      "patterns": [
-        "Upcoming events",
-        "College fest dates",
-        "Workshops",
-        "Seminars",
-        "Cultural programs",
-        "Sports events"
-      ],
-      "responses": [
-        "Check the college events calendar here: https://college.example.edu/events. New workshops and seminars are updated regularly."
-      ]
-    },
-    {
-      "tag": "contacts",
-      "patterns": [
-        "Principal contact",
-        "Department email",
-        "Faculty contact",
-        "College phone number",
-        "Administration contacts"
-      ],
-      "responses": [
-        "College administration contacts: https://college.example.edu/contacts. You can find emails and phone numbers for departments and faculty."
-      ]
-    },
-    {
-      "tag": "clubs",
-      "patterns": [
-        "Student clubs",
-        "Join a club",
-        "Sports clubs",
-        "Music club",
-        "Cultural societies"
-      ],
-      "responses": [
-        "College clubs info: https://college.example.edu/clubs. You can join clubs through student portal or club office."
-      ]
-    },
-    {
-      "tag": "placements",
-      "patterns": [
-        "Placement opportunities",
-        "Campus recruitment",
-        "How to prepare for placement",
-        "Internship opportunities",
-        "Placement cell contact"
-      ],
-      "responses": [
-        "Placements and internships info: https://college.example.edu/placements. Contact placement cell for guidance and resume help."
-      ]
-    },
-    {
-      "tag": "canteen",
-      "patterns": [
-        "Cafeteria timings",
-        "Food menu",
-        "Lunch options",
-        "Meal prices",
-        "Canteen facilities"
-      ],
-      "responses": [
-        "Cafeteria is open 8 AM - 8 PM. Menu and prices: https://college.example.edu/canteen."
-      ]
-    },
-    {
-      "tag": "health_services",
-      "patterns": [
-        "College clinic",
-        "Medical help",
-        "First aid",
-        "Doctor on campus",
-        "Health services"
-      ],
-      "responses": [
-        "College health services: Mon-Fri 9 AM - 5 PM. Clinic contact: +91-123-456-789. Emergencies call campus security."
-      ]
-    },
-    {
-      "tag": "rules_policies",
-      "patterns": [
-        "College rules",
-        "Code of conduct",
-        "Attendance policy",
-        "Leave policy",
-        "Examination regulations"
-      ],
-      "responses": [
-        "College rules and policies: https://college.example.edu/policies. Make sure to follow attendance and conduct regulations."
-      ]
-    },
-    {
-      "tag": "transport_pass",
-      "patterns": [
-        "How to get bus pass",
-        "Transport card",
-        "Shuttle pass",
-        "Student travel pass"
-      ],
-      "responses": [
-        "Student transport passes are issued at the transport office. Check the portal for application form and fees."
-      ]
-    },
-    {
-      "tag": "career_counseling",
-      "patterns": [
-        "Career guidance",
-        "How to choose a major",
-        "Counseling services",
-        "Career advice"
-      ],
-      "responses": [
-        "Career counseling is available at https://college.example.edu/career-counseling. Book appointments online or visit office."
-      ]
-    },
-    {
-      "tag": "feedback",
-      "patterns": [
-        "Submit feedback",
-        "Course feedback",
-        "Report issues",
-        "Suggestions for college"
-      ],
-      "responses": [
-        "You can submit feedback here: https://college.example.edu/feedback. Your suggestions help us improve!"
-      ]
-    },
-    {
       "tag": "help",
       "patterns": [
         "help",
-        "I need help",
+        "i need help",
         "can you help me",
         "support",
         "what can you do",
         "assistance",
-        "how to use"
+        "how to use",
+        "help me",
+        "need assistance",
+        "how do I ask",
+        "help please",
+        "help options",
+        "can you assist",
+        "support me",
+        "help menu"
       ],
       "responses": [
         "Sure! I'm your College Helpdesk Bot 🤖. You can ask me anything about the college. For example:\n- 'How do I apply for admission?'\n- 'What are the tuition fees?'\n- 'When will the timetable be released?'\n- 'Hostel room availability'\n- 'College bus timings'\nGo ahead, type your question!"
@@ -277,7 +214,14 @@
         "good afternoon",
         "good evening",
         "hiya",
-        "hey there"
+        "hey there",
+        "morning",
+        "afternoon",
+        "evening",
+        "greetings",
+        "sup",
+        "yo",
+        "hi there"
       ],
       "responses": [
         "Hello! How can I help you today? 😊",
@@ -293,7 +237,17 @@
         "goodbye",
         "see you",
         "talk to you later",
-        "catch you later"
+        "catch you later",
+        "see ya",
+        "bye bye",
+        "farewell",
+        "later",
+        "got to go",
+        "leaving now",
+        "see you soon",
+        "take care",
+        "bye for now",
+        "see you later"
       ],
       "responses": [
         "Goodbye! Have a great day! 👋",
@@ -308,7 +262,17 @@
         "thank you",
         "thank you so much",
         "thanks a lot",
-        "thx"
+        "thx",
+        "thank u",
+        "many thanks",
+        "thanks a ton",
+        "thanks buddy",
+        "thanks mate",
+        "thanks friend",
+        "thank you very much",
+        "thanks a bunch",
+        "thnx",
+        "thanks everyone"
       ],
       "responses": [
         "You're welcome! 😊",
