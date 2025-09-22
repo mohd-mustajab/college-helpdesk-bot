@@ -1,12 +1,8 @@
 import logging
 import requests
 import os
-from telegram import Update
+from telegram import Update, Bot
 from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters
-from telegram import Bot
-
-bot = Bot(token=os.getenv("BOT_TOKEN"))
-bot.delete_webhook()  
 
 # Read environment variables (set in Render dashboard)
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -14,6 +10,9 @@ API_URL = os.getenv("API_URL")
 
 if not BOT_TOKEN or not API_URL:
     raise ValueError("❌ BOT_TOKEN or API_URL is missing. Set them in Render Dashboard > Environment.")
+
+bot = Bot(token=BOT_TOKEN)
+bot.delete_webhook()  
 
 # Enable logging
 logging.basicConfig(
@@ -29,12 +28,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Handle normal text messages
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
-
     try:
         response = requests.post(API_URL, json={"message": user_message})
         if response.status_code == 200:
             data = response.json()
-            reply_text = data.get("reply", "Sorry, something went wrong.")
+            reply_text = data.get("response", "Sorry, something went wrong.")  # ✅ fixed
         else:
             reply_text = f"⚠️ Server error {response.status_code}"
     except Exception as e:
@@ -46,11 +44,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
 
-    # Handlers
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    # Start bot
     app.run_polling()
 
 if __name__ == "__main__":

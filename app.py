@@ -12,7 +12,6 @@ intents = json.load(open("data/intents.json", "r", encoding="utf-8"))
 # Make sure logs folder exists (important on Render)
 os.makedirs("logs", exist_ok=True)
 
-# Helper: find responses for a tag
 def get_responses_for_tag(tag):
     for it in intents["intents"]:
         if it["tag"] == tag:
@@ -21,7 +20,6 @@ def get_responses_for_tag(tag):
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    # Try to read JSON safely
     data = request.get_json(silent=True) or {}
     if not data:
         return jsonify({"error": "No JSON data received"}), 400
