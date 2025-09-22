@@ -1,22 +1,30 @@
 services:
-  # Flask API (Web Service)
+  # -------------------------------
+  # Flask API service
+  # -------------------------------
   - type: web
     name: college-helpdesk-api
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    startCommand: gunicorn app:app
+    plan: free
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10
+        value: 3.10.13
 
-  # Telegram Bot (Background Worker)
+  # -------------------------------
+  # Telegram bot worker service
+  # -------------------------------
   - type: worker
     name: college-helpdesk-bot
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python telegram_bot.py
+    plan: free
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
       - key: BOT_TOKEN
-        sync: false   # you will set this in Render dashboard manually
+        sync: false   # set manually in Render dashboard
       - key: API_URL
         value: https://college-helpdesk-api.onrender.com/chat
