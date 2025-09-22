@@ -258,6 +258,25 @@
       "responses": [
         "Sorry, I didn't get that. Can you rephrase? Or type 'help' to see categories I can answer."
       ]
-    }
+    },
+    {
+  "tag": "greetings",
+  "patterns": [
+    "hello",
+    "hi",
+    "hey",
+    "good morning",
+    "good afternoon",
+    "good evening",
+    "hiya",
+    "hey there"
+  ],
+  "responses": [
+    "Hello! How can I help you today? 😊",
+    "Hi there! Ask me anything about the college.",
+    "Hey! I'm your College Helpdesk Bot. How can I assist you?",
+    "Hi! Need help with admissions, fees, or something else?"
+  ]
+}
   ]
 }
