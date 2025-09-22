@@ -59,7 +59,9 @@
         "When are the final exams",
         "exam rules",
         "exam timetable",
-        "how to apply for exams"
+        "how to apply for exams",
+        "grading system",
+        "exam results"
       ],
       "responses": [
         "Exam schedules are posted on the student portal. Make sure you register for exams before the deadlines."
@@ -72,7 +74,9 @@
         "How to apply for hostel",
         "hostel rules",
         "mess timings",
-        "hostel facilities"
+        "hostel facilities",
+        "room rent",
+        "hostel contact"
       ],
       "responses": [
         "Hostel applications are open till Aug 1. Rooms assigned on first-come-first-serve basis. Check portal -> Hostel for details."
@@ -85,7 +89,8 @@
         "Shuttle service",
         "Transport facilities",
         "How to reach campus",
-        "bus routes"
+        "bus routes",
+        "parking facilities"
       ],
       "responses": [
         "College buses run from 7 AM to 10 PM. Routes and timings: https://college.example.edu/transport."
@@ -111,7 +116,9 @@
         "Forgot my password",
         "WiFi issues",
         "Software installation",
-        "IT helpdesk"
+        "IT helpdesk",
+        "Email setup",
+        "VPN connection"
       ],
       "responses": [
         "For IT issues, contact support@college.example.edu or call +91-123-456-7890. Portal login help: https://college.example.edu/it-support"
@@ -124,7 +131,8 @@
         "College fest dates",
         "Workshops",
         "Seminars",
-        "Cultural programs"
+        "Cultural programs",
+        "Sports events"
       ],
       "responses": [
         "Check the college events calendar here: https://college.example.edu/events. New workshops and seminars are updated regularly."
@@ -141,6 +149,107 @@
       ],
       "responses": [
         "College administration contacts: https://college.example.edu/contacts. You can find emails and phone numbers for departments and faculty."
+      ]
+    },
+    {
+      "tag": "clubs",
+      "patterns": [
+        "Student clubs",
+        "Join a club",
+        "Sports clubs",
+        "Music club",
+        "Cultural societies"
+      ],
+      "responses": [
+        "College clubs info: https://college.example.edu/clubs. You can join clubs through student portal or club office."
+      ]
+    },
+    {
+      "tag": "placements",
+      "patterns": [
+        "Placement opportunities",
+        "Campus recruitment",
+        "How to prepare for placement",
+        "Internship opportunities",
+        "Placement cell contact"
+      ],
+      "responses": [
+        "Placements and internships info: https://college.example.edu/placements. Contact placement cell for guidance and resume help."
+      ]
+    },
+    {
+      "tag": "canteen",
+      "patterns": [
+        "Cafeteria timings",
+        "Food menu",
+        "Lunch options",
+        "Meal prices",
+        "Canteen facilities"
+      ],
+      "responses": [
+        "Cafeteria is open 8 AM - 8 PM. Menu and prices: https://college.example.edu/canteen."
+      ]
+    },
+    {
+      "tag": "health_services",
+      "patterns": [
+        "College clinic",
+        "Medical help",
+        "First aid",
+        "Doctor on campus",
+        "Health services"
+      ],
+      "responses": [
+        "College health services: Mon-Fri 9 AM - 5 PM. Clinic contact: +91-123-456-789. Emergencies call campus security."
+      ]
+    },
+    {
+      "tag": "rules_policies",
+      "patterns": [
+        "College rules",
+        "Code of conduct",
+        "Attendance policy",
+        "Leave policy",
+        "Examination regulations"
+      ],
+      "responses": [
+        "College rules and policies: https://college.example.edu/policies. Make sure to follow attendance and conduct regulations."
+      ]
+    },
+    {
+      "tag": "transport_pass",
+      "patterns": [
+        "How to get bus pass",
+        "Transport card",
+        "Shuttle pass",
+        "Student travel pass"
+      ],
+      "responses": [
+        "Student transport passes are issued at the transport office. Check the portal for application form and fees."
+      ]
+    },
+    {
+      "tag": "career_counseling",
+      "patterns": [
+        "Career guidance",
+        "How to choose a major",
+        "Counseling services",
+        "Career advice"
+      ],
+      "responses": [
+        "Career counseling is available at https://college.example.edu/career-counseling. Book appointments online or visit office."
+      ]
+    },
+    {
+      "tag": "feedback",
+      "patterns": [
+        "Submit feedback",
+        "Course feedback",
+        "Report issues",
+        "Suggestions for college"
+      ],
+      "responses": [
+        "You can submit feedback here: https://college.example.edu/feedback. Your suggestions help us improve!"
       ]
     },
     {
