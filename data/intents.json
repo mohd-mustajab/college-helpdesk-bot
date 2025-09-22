@@ -253,30 +253,75 @@
       ]
     },
     {
+      "tag": "help",
+      "patterns": [
+        "help",
+        "I need help",
+        "can you help me",
+        "support",
+        "what can you do",
+        "assistance",
+        "how to use"
+      ],
+      "responses": [
+        "Sure! I'm your College Helpdesk Bot 🤖. You can ask me anything about the college. For example:\n- 'How do I apply for admission?'\n- 'What are the tuition fees?'\n- 'When will the timetable be released?'\n- 'Hostel room availability'\n- 'College bus timings'\nGo ahead, type your question!"
+      ]
+    },
+    {
+      "tag": "greetings",
+      "patterns": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "hiya",
+        "hey there"
+      ],
+      "responses": [
+        "Hello! How can I help you today? 😊",
+        "Hi there! Ask me anything about the college.",
+        "Hey! I'm your College Helpdesk Bot. How can I assist you?",
+        "Hi! Need help with admissions, fees, or something else?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "talk to you later",
+        "catch you later"
+      ],
+      "responses": [
+        "Goodbye! Have a great day! 👋",
+        "See you soon! If you have more questions, just ask.",
+        "Bye! Stay safe and study well!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "thank you so much",
+        "thanks a lot",
+        "thx"
+      ],
+      "responses": [
+        "You're welcome! 😊",
+        "No problem! Glad I could help.",
+        "Anytime! Feel free to ask more questions."
+      ]
+    },
+    {
       "tag": "fallback",
       "patterns": [],
       "responses": [
         "Sorry, I didn't get that. Can you rephrase? Or type 'help' to see categories I can answer."
       ]
-    },
-    {
-  "tag": "greetings",
-  "patterns": [
-    "hello",
-    "hi",
-    "hey",
-    "good morning",
-    "good afternoon",
-    "good evening",
-    "hiya",
-    "hey there"
-  ],
-  "responses": [
-    "Hello! How can I help you today? 😊",
-    "Hi there! Ask me anything about the college.",
-    "Hey! I'm your College Helpdesk Bot. How can I assist you?",
-    "Hi! Need help with admissions, fees, or something else?"
-  ]
-}
+    }
   ]
 }
