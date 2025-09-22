@@ -5,7 +5,9 @@
       "patterns": [
         "How do I apply for admission",
         "Admission deadlines",
-        "what are the entry requirements"
+        "what are the entry requirements",
+        "application process",
+        "eligibility criteria for admission"
       ],
       "responses": [
         "Admissions info is at https://college.example.edu/admissions. Deadlines: Fall - Aug 15, Spring - Jan 10. Need more details?"
@@ -16,7 +18,9 @@
       "patterns": [
         "How much is the tuition",
         "fee structure",
-        "payment options for fees"
+        "payment options for fees",
+        "tuition fees",
+        "scholarships for fees"
       ],
       "responses": [
         "Tuition depends on your program. For undergrad it's approx ₹X per year. Check finance office or this page: /fees"
@@ -27,10 +31,116 @@
       "patterns": [
         "When is my timetable released",
         "class schedule",
-        "how to see timetable"
+        "how to see timetable",
+        "lecture timings",
+        "semester schedule"
       ],
       "responses": [
         "Timetables are released on the student portal 2 weeks before semester. Login to portal -> Timetable."
+      ]
+    },
+    {
+      "tag": "library",
+      "patterns": [
+        "Library timings",
+        "How to access online library",
+        "Book borrowing rules",
+        "library catalog",
+        "library resources"
+      ],
+      "responses": [
+        "Library is open Mon-Sat 8 AM to 8 PM. Online resources: https://college.example.edu/library. You can borrow up to 5 books at a time."
+      ]
+    },
+    {
+      "tag": "exams",
+      "patterns": [
+        "Exam schedule",
+        "When are the final exams",
+        "exam rules",
+        "exam timetable",
+        "how to apply for exams"
+      ],
+      "responses": [
+        "Exam schedules are posted on the student portal. Make sure you register for exams before the deadlines."
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": [
+        "Hostel rooms availability",
+        "How to apply for hostel",
+        "hostel rules",
+        "mess timings",
+        "hostel facilities"
+      ],
+      "responses": [
+        "Hostel applications are open till Aug 1. Rooms assigned on first-come-first-serve basis. Check portal -> Hostel for details."
+      ]
+    },
+    {
+      "tag": "transport",
+      "patterns": [
+        "College bus timings",
+        "Shuttle service",
+        "Transport facilities",
+        "How to reach campus",
+        "bus routes"
+      ],
+      "responses": [
+        "College buses run from 7 AM to 10 PM. Routes and timings: https://college.example.edu/transport."
+      ]
+    },
+    {
+      "tag": "scholarships",
+      "patterns": [
+        "Scholarship eligibility",
+        "How to apply for scholarships",
+        "Financial aid",
+        "Merit scholarships",
+        "Need-based scholarships"
+      ],
+      "responses": [
+        "Scholarships info and application: https://college.example.edu/scholarships. Check deadlines carefully!"
+      ]
+    },
+    {
+      "tag": "it_support",
+      "patterns": [
+        "Can't login to portal",
+        "Forgot my password",
+        "WiFi issues",
+        "Software installation",
+        "IT helpdesk"
+      ],
+      "responses": [
+        "For IT issues, contact support@college.example.edu or call +91-123-456-7890. Portal login help: https://college.example.edu/it-support"
+      ]
+    },
+    {
+      "tag": "events",
+      "patterns": [
+        "Upcoming events",
+        "College fest dates",
+        "Workshops",
+        "Seminars",
+        "Cultural programs"
+      ],
+      "responses": [
+        "Check the college events calendar here: https://college.example.edu/events. New workshops and seminars are updated regularly."
+      ]
+    },
+    {
+      "tag": "contacts",
+      "patterns": [
+        "Principal contact",
+        "Department email",
+        "Faculty contact",
+        "College phone number",
+        "Administration contacts"
+      ],
+      "responses": [
+        "College administration contacts: https://college.example.edu/contacts. You can find emails and phone numbers for departments and faculty."
       ]
     },
     {
