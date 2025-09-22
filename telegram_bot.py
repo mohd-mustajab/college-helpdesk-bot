@@ -6,7 +6,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, ContextTyp
 from telegram import Bot
 
 bot = Bot(token=os.getenv("BOT_TOKEN"))
-bot.delete_webhook()  # Ensure no webhook is active
+bot.delete_webhook()  
 
 # Read environment variables (set in Render dashboard)
 BOT_TOKEN = os.getenv("BOT_TOKEN")
