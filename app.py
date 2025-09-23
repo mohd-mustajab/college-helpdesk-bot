@@ -35,7 +35,7 @@ def chat():
     tag = clf.classes_[idx]
     prob = float(probs[idx])
 
-    if prob < 0.5:
+    if prob < 0.3:
         tag = "fallback"
 
     responses = get_responses_for_tag(tag)

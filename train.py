@@ -1,28 +1,59 @@
-import json, random
-import pandas as pd
+# train.py
+import json
+import joblib
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import make_pipeline
-import joblib
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
 
-# load intents
-with open("data/intents.json","r",encoding="utf-8") as f:
+# ---------------------------
+# Load intents.json
+# ---------------------------
+with open("data/intents.json", "r", encoding="utf-8") as f:
     intents = json.load(f)
 
-rows = []
+X = []  # training sentences
+y = []  # labels
+
 for intent in intents["intents"]:
     tag = intent["tag"]
-    for p in intent.get("patterns",[]):
-        rows.append((p, tag))
-df = pd.DataFrame(rows, columns=["text","tag"])
+    for pattern in intent["patterns"]:
+        X.append(pattern)
+        y.append(tag)
 
-# simple pipeline
-vect = TfidfVectorizer(stop_words='english', ngram_range=(1,2))
-clf = LogisticRegression(max_iter=1000)
+# ---------------------------
+# Train/Test Split
+# ---------------------------
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
 
-X = vect.fit_transform(df["text"])
-clf.fit(X, df["tag"])
+# ---------------------------
+# Build Pipeline (Vectorizer + Classifier)
+# ---------------------------
+pipeline = Pipeline([
+    ("tfidf", TfidfVectorizer(ngram_range=(1,2), stop_words="english")),
+    ("clf", LogisticRegression(max_iter=1000, C=3))
+])
 
-joblib.dump(vect, "models/vectorizer.joblib")
-joblib.dump(clf, "models/classifier.joblib")
-print("Saved vectorizer and classifier.")
+# ---------------------------
+# Train the model
+# ---------------------------
+pipeline.fit(X_train, y_train)
+
+# ---------------------------
+# Evaluate
+# ---------------------------
+y_pred = pipeline.predict(X_test)
+print("Classification Report:\n")
+print(classification_report(y_test, y_pred))
+
+# ---------------------------
+# Save models
+# ---------------------------
+joblib.dump(pipeline.named_steps["tfidf"], "models/vectorizer.joblib")
+joblib.dump(pipeline.named_steps["clf"], "models/classifier.joblib")
+
+print("\n✅ Model training complete! Saved in 'models/'")
