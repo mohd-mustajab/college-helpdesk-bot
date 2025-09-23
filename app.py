@@ -4,12 +4,10 @@ import numpy as np, os
 
 app = Flask(__name__)
 
-# Load models and intents
 vect = joblib.load("models/vectorizer.joblib")
 clf = joblib.load("models/classifier.joblib")
 intents = json.load(open("data/intents.json", "r", encoding="utf-8"))
 
-# Make sure logs folder exists (important on Render)
 os.makedirs("logs", exist_ok=True)
 
 def get_responses_for_tag(tag):
@@ -28,7 +26,7 @@ def chat():
     if not message:
         return jsonify({"error": "Empty message"}), 400
 
-    # Predict
+
     x = vect.transform([message])
     probs = clf.predict_proba(x)[0]
     idx = np.argmax(probs)
@@ -41,7 +39,6 @@ def chat():
     responses = get_responses_for_tag(tag)
     resp = random.choice(responses) if responses else "Sorry, I don't know that."
 
-    # Log chat
     with open("logs/chats.csv", "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([datetime.datetime.utcnow().isoformat(), message, resp, tag, prob])
