@@ -1,38 +1,31 @@
-# api/chat.py
-from http import HTTPStatus
-import json, joblib, random, csv, datetime, os
-import numpy as np
-
-# load models on cold-start (cached across warm invocations)
-vect = joblib.load("models/vectorizer.joblib")
-clf = joblib.load("models/classifier.joblib")
-intents = json.load(open("data/intents.json","r",encoding="utf-8"))
-
-def get_responses_for_tag(tag):
-    for it in intents["intents"]:
-        if it["tag"] == tag:
-            return it.get("responses", [])
-    return []
+import json
 
 def handler(request):
     try:
-        data = request.json or {}
-    except Exception:
-        return {"statusCode": HTTPStatus.BAD_REQUEST, "body": json.dumps({"error":"bad json"})}
+        body = json.loads(request.body or "{}")
+        user_message = body.get("message", "")
 
-    message = (data.get("message") or "").strip()
-    if not message:
-        return {"statusCode": HTTPStatus.BAD_REQUEST, "body": json.dumps({"error":"empty message"})}
+        if not user_message:
+            return {
+                "statusCode": 400,
+                "body": json.dumps({"error": "Missing 'message' field"})
+            }
 
-    x = vect.transform([message])
-    probs = clf.predict_proba(x)[0]
-    idx = int(np.argmax(probs))
-    tag = str(clf.classes_[idx])
-    prob = float(probs[idx])
-    if prob < 0.3:
-        tag = "fallback"
-    responses = get_responses_for_tag(tag)
-    resp = random.choice(responses) if responses else "Sorry, I don't know that."
+        # Example simple logic — replace with your actual chatbot logic
+        if "course" in user_message.lower():
+            reply = "You can find all courses on the college portal 📚."
+        elif "admission" in user_message.lower():
+            reply = "Admissions are open till 30th Nov! 🏫"
+        else:
+            reply = "I’m your College Helpdesk Bot 🤖. How can I assist you today?"
 
-    # (optional) log to a file in /tmp (ephemeral) or to external store
-    return {"statusCode": HTTPStatus.OK, "body": json.dumps({"response": resp, "tag": tag, "confidence": prob})}
+        return {
+            "statusCode": 200,
+            "body": json.dumps({"reply": reply})
+        }
+
+    except Exception as e:
+        return {
+            "statusCode": 500,
+            "body": json.dumps({"error": str(e)})
+        }
