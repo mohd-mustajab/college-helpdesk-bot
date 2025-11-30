@@ -1,10 +1,9 @@
-# api/webhook.py
 import os
 import json
 import requests
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")          # set in Vercel
-API_URL = os.getenv("API_URL")              # e.g. https://college-helpdesk-api.vercel.app/chat
+BOT_TOKEN = os.getenv("BOT_TOKEN")          
+API_URL = os.getenv("API_URL")              
 
 if not BOT_TOKEN or not API_URL:
     raise RuntimeError("BOT_TOKEN and API_URL must be set as environment variables")

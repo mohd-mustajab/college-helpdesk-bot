@@ -11,7 +11,7 @@ def handler(request):
                 "body": json.dumps({"error": "Missing 'message' field"})
             }
 
-        # Example simple logic — replace with your actual chatbot logic
+        # Example simple logic for demo purposes
         if "course" in user_message.lower():
             reply = "You can find all courses on the college portal 📚."
         elif "admission" in user_message.lower():
